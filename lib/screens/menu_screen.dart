@@ -91,12 +91,6 @@ class _MenuScreenState extends State<MenuScreen> {
     }
   }
 
-  void _playCampaign() {
-    final d = PipeDifficulty.values[_s.difficulty];
-    final level = (_s.campaignDone[d.index] ?? 0).clamp(0, 59);
-    _openCampaignLevel(d, level);
-  }
-
   /// Guard so advancing to the next board doesn't restart menu music.
   bool _advancing = false;
 
