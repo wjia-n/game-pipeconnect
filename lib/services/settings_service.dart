@@ -59,7 +59,7 @@ class PipeSettings extends ChangeNotifier {
   List<String> playerNames = [defaultName];
   String themeId = 'copper';
   int pipeStyle = 0;
-  bool isPro = false;
+  bool isPro = true; // everything unlocked — no Pro version
 
   /// Campaign progress: highest COMPLETED level per difficulty (0-based
   /// count). JSON: {"0": 12, "1": 5, "2": 0}.
@@ -165,7 +165,7 @@ class PipeSettings extends ChangeNotifier {
     }
     boardsSolved = p.getInt(_kBoards) ?? 0;
     bestTwists = p.getInt(_kBestTwists) ?? 0;
-    isPro = p.getBool(_kIsPro) ?? false;
+    isPro = true; // everything unlocked
     for (final k in _defaultCustomColors.keys) {
       customColors[k] =
           p.getInt('$_kCustomPrefix$k') ?? _defaultCustomColors[k]!;
