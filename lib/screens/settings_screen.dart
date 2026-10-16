@@ -3,6 +3,7 @@ import '../services/audio_service.dart';
 import '../services/settings_service.dart';
 import '../theme/workshop.dart';
 import '../theme/pipe_themes.dart';
+import '../transfer/transfer_ui.dart';
 
 /// Settings: music / SFX / volume, reset progress.
 class SettingsScreen extends StatelessWidget {
@@ -41,6 +42,7 @@ class SettingsScreen extends StatelessWidget {
               padding:
                   const EdgeInsets.symmetric(horizontal: 22, vertical: 14),
               children: [
+              TransferSaveTile(gameSlug: 'pipeconnect'),
                 SettingRow(
                   label: 'Music',
                   theme: t,
