@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../services/audio_service.dart';
 import '../services/settings_service.dart';
@@ -103,7 +104,9 @@ class SettingsScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        'Resets campaign boards, daily streak and stats. Your themes, name and Pro unlock stay.',
+                        defaultTargetPlatform == TargetPlatform.iOS
+                            ? 'Resets campaign boards, daily streak and stats. Your themes, name and unlocks stay.'
+                            : 'Resets campaign boards, daily streak and stats. Your themes, name and Pro unlock stay.',
                         style: Workshop.body(14, theme: t),
                         textAlign: TextAlign.center,
                       ),

@@ -698,7 +698,9 @@ class _ThemeCard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 8),
               child: Text(
-                '🔒 ${PipeThemes.all.length - PipeThemes.freeThemeIds.length} more themes in PRO',
+                defaultTargetPlatform == TargetPlatform.iOS
+                    ? '🔒 ${PipeThemes.all.length - PipeThemes.freeThemeIds.length} more themes'
+                    : '🔒 ${PipeThemes.all.length - PipeThemes.freeThemeIds.length} more themes in PRO',
                 style: Workshop.label(12, theme: theme),
               ),
             ),
@@ -958,7 +960,7 @@ class _SupportCard extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              'This game is fully unlocked. Get a Gold Star to show your support!',
+              'This game is fully unlocked. Get a Gold Star!',
               style: Workshop.body(14, theme: theme),
               textAlign: TextAlign.center,
             ),
